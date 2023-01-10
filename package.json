@@ -1,0 +1,34 @@
+{
+  "name": "github-daily",
+  "version": "1.0.0",
+  "description": "Github Daily Trending",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u qunit --timeout 15000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skipmaple/github-daily.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skipmaple/github-daily/issues"
+  },
+  "homepage": "https://github.com/skipmaple/github-daily#readme",
+  "dependencies": {
+    "@octokit/auth-app": "^4.0.7",
+    "@octokit/core": "^4.1.0",
+    "axios": "^1.2.1",
+    "chromedriver": "^108.0.0",
+    "dayjs": "^1.8.32",
+    "file-saver": "^2.0.5",
+    "selenium-webdriver": "^4.7.1",
+    "shelljs": "^0.8.5",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
