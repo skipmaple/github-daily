@@ -10,10 +10,11 @@ const run = async (date) => {
         .map((obj, i) => {
             let {repo_link, repo, desc, programmingLanguage, starCount, forkCount, todayStarCount,} = obj;
 
-            return `${i + 1}. [**${repo}**${desc ? ': ' + desc : ''}](${repo_link})
-${todayStarCount} | ${starCount} stars | ${forkCount} forks ${programmingLanguage ? '| ' + programmingLanguage : ''}
+            return `\n${i + 1}. [**${repo.split('/').join(' / ')}**](${repo_link})
+            
+    ${desc ? '__' + desc + '__' : ''}
 
-`
+    ${todayStarCount} | ${starCount} stars | ${forkCount} forks ${programmingLanguage ? ('| `' + programmingLanguage + '`') : ''}\n\n`
         }).join('');
 
     console.log(contents)
