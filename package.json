@@ -21,7 +21,7 @@
     "@octokit/auth-app": "^4.0.7",
     "@octokit/core": "^4.1.0",
     "axios": "^1.2.1",
-    "chromedriver": "^108.0.0",
+    "chromedriver": "latest",
     "dayjs": "^1.8.32",
     "file-saver": "^2.0.5",
     "selenium-webdriver": "^4.7.1",

@@ -14,8 +14,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
+      - name: install chrome prerequisites
+        run: sudo apt update && sudo apt install -y unzip xvfb libxi6 libgconf-2-4
+      - name: install google chrome
+        run: sudo bash -c "curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add"
+      - run: sudo bash -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google-chrome.list"
+      - run: sudo apt update -y && sudo apt install -y google-chrome-stable
+      - run: google-chrome --version
+      - run: which google-chrome
+
       - name: npm install
         run: npm install --only=prod
         working-directory: .

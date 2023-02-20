@@ -1,12 +1,14 @@
 require("chromedriver")
 const {Builder, By, until} = require('selenium-webdriver')
+
 const Chrome = require('selenium-webdriver/chrome')
 
 const getTrending = async () => {
     let options = new Chrome.Options()
+    options.setChromeBinaryPath('/usr/bin/google-chrome');
     let driver = await new Builder()
-        .setChromeOptions(options.addArguments('headless'))
         .forBrowser('chrome')
+        .setChromeOptions(options.addArguments('headless'))
         .build()
 
     let res = []
