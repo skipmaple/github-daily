@@ -24,7 +24,7 @@ const getTrending = async () => {
         for (let i = 0; i < firstTenArticles.length; i++) {
             let article = await firstTenArticles[i]
 
-            let repo_link = await article.findElement(By.css("h1.h3 a")).getAttribute('href')
+            let repo_link = await article.findElement(By.css("h2.h3 a")).getAttribute('href')
             let desc = ""
             try {
                 desc = await article.findElement(By.css("p")).getText()
