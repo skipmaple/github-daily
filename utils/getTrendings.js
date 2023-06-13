@@ -48,7 +48,7 @@ const getTrending = async () => {
 
             let forkCount = ""
             try {
-                forkCount = await article.findElement(By.css("div a[href*='members']")).getText()
+                forkCount = await article.findElement(By.css("div.f6 a[href$='/forks']")).getText()
             } catch (e) {
                 console.log("ForkCount Error: ", e)
             }
