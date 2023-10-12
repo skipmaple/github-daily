@@ -15,13 +15,11 @@ jobs:
         with:
           node-version: 18
       - name: install chrome prerequisites
-        run: sudo apt update && sudo apt install -y unzip xvfb libxi6 libgconf-2-4
+        run: sudo apt update && sudo apt install -y unzip xvfb libxi6 libgconf-2-4 wget
       - name: install google chrome
-        run: sudo bash -c "curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add"
-      - run: sudo bash -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google-chrome.list"
-      - run: sudo apt update -y && sudo apt install -y google-chrome-stable
+        run: wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_117.0.5938.149-1_amd64.deb
+      - run: sudo apt install -f ./google-chrome-stable_117.0.5938.149-1_amd64.deb
       - run: google-chrome --version
-      - run: which google-chrome
 
       - name: npm install
         run: npm config set registry http://registry.npmjs.org/ && npm install --only=prod
