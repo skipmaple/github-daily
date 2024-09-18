@@ -17,7 +17,7 @@ jobs:
       - name: install chrome prerequisites
         run: sudo apt update && sudo apt install -y unzip xvfb libxi6 libgconf-2-4 wget
       - name: install google chrome
-        run: wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_117.0.5938.149-1_amd64.deb
+        run: wget https://mirror.cs.uchicago.edu/google-chrome/pool/main/g/google-chrome-stable/google-chrome-stable_117.0.5938.149-1_amd64.deb
       - run: sudo apt install -y --allow-downgrades -f ./google-chrome-stable_117.0.5938.149-1_amd64.deb
       - run: google-chrome --version
 
